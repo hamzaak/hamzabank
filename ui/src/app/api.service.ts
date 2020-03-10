@@ -3,7 +3,9 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MenuItem } from './menu-item';
 
-const apiUrl = 'http://localhost:5000/menuitems/get-all';
+const apiUrlBase = 'http://localhost:5000/menuitems/';
+const apiUrlGetItem = 'get/';
+const apiUrlGetItems = 'get-all/';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,13 @@ const apiUrl = 'http://localhost:5000/menuitems/get-all';
 export class ApiService {
   constructor(private http: HttpClient) { }
 
+  getMenuItem(id: Number) : Observable<HttpResponse<MenuItem>> {
+    return this.http.get<MenuItem>(
+      apiUrlBase + apiUrlGetItem + id, { observe: 'response' });
+  }
+
   getMenuItems() : Observable<HttpResponse<MenuItem[]>> {
     return this.http.get<MenuItem[]>(
-      apiUrl, { observe: 'response' });
+      apiUrlBase + apiUrlGetItems, { observe: 'response' });
   }
 }

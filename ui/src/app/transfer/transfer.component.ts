@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { MenuItem } from '../menu-item';
 
 @Component({
   selector: 'app-transfer',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferComponent implements OnInit {
 
-  constructor() { }
+  item: MenuItem;
+
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
+    this.api.getMenuItem(2)
+      .subscribe(resp => {
+        console.log(resp);
+        this.item = resp.body;
+    });
   }
 
 }
