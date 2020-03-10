@@ -17,6 +17,11 @@ namespace HamzaBank.Api.Services {
             _menuItemRepository.Add(menuItem);
         }
 
+        public MenuItem Get(long id)
+        {
+            return _menuItemRepository.Get(id);
+        }
+
         public IList<MenuItem> GetAll()
         {
             return _menuItemRepository.GetAll();

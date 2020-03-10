@@ -18,6 +18,13 @@ namespace HamzaBank.Api.Controllers
         }
 
         [HttpGet]
+        [Route("get/{id}")]
+        public MenuItem Get(long id)
+        {
+            return _menuItemService.Get(id);
+        }
+
+        [HttpGet]
         [Route("get-all")]
         public IList<MenuItem> GetAll()
         {

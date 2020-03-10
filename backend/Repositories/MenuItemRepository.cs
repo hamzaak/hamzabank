@@ -19,10 +19,17 @@ namespace HamzaBank.Api.Repositories
         {
             return _context.MenuItems.ToList();
         }
+        
+        public MenuItem Get(long id)
+        {
+            return _context.MenuItems.FirstOrDefault(x=>x.Id==id);
+        }
 
         public void Add(MenuItem menuItem){
             _context.MenuItems.Add(menuItem);
             _context.SaveChanges();
         }
+
+        
     }
 }

@@ -9,9 +9,9 @@ namespace HamzaBank.Api.Data {
         {
             if (!context.MenuItems.Any())
             {
-                context.Add(new MenuItem{ Id= 1, ComponentId="Accounts", Title="Hesaplar"});
-                context.Add(new MenuItem{ Id= 2, ComponentId="Transfer", Title="Para Transferi"});
-                context.Add(new MenuItem{ Id= 3, ComponentId="Payment", Title="Ödeme"});
+                context.Add(new MenuItem{ Id= 1, ComponentId="Accounts", Title="Hesaplar", Body="Tüm hesap detaylarınız..."});
+                context.Add(new MenuItem{ Id= 2, ComponentId="Transfer", Title="Para Transferi", Body="Para transfer detaylarınız..."});
+                context.Add(new MenuItem{ Id= 3, ComponentId="Payment", Title="Ödeme", Body="Ödeme detaylarınız..."});
             }
 
             context.SaveChanges();
