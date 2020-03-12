@@ -7,6 +7,7 @@ To run backend from terminal;
 
 To run ui from terminal;
 * cd ui
+* npm install
 * ng serve
 
 backend api url is https://localhost:5001/menuitems/get-all
